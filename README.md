@@ -1,4 +1,4 @@
-# hizma_project
+# Hizma Project
 
 A new Flutter project.
 
