@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:hizma_project/components/app_bar.dart';
+import 'package:hizma_project/utils/const.dart';
+import 'package:hizma_project/views/authorization/sign_in_page.dart';
 import 'package:hizma_project/views/authorization/verification_page.dart';
 
-import '../../components/app_bar.dart';
-import '../../utils/const.dart';
-import 'sign_in_page.dart';
-
-class SignUpPage extends StatefulWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+class SetPasswordPage extends StatefulWidget {
+  const SetPasswordPage({Key? key}) : super(key: key);
 
   @override
-  _SignUpPageState createState() => _SignUpPageState();
+  _SetPasswordPageState createState() => _SetPasswordPageState();
 }
 
-class _SignUpPageState extends State<SignUpPage> {
-  final TextEditingController _fullNameController = TextEditingController();
-  final TextEditingController _numberController = TextEditingController();
-
+class _SetPasswordPageState extends State<SetPasswordPage> {
+  final TextEditingController _password1Controller = TextEditingController();
+  final TextEditingController _password2Controller = TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -34,7 +32,7 @@ class _SignUpPageState extends State<SignUpPage> {
         child: Scaffold(
           appBar: PreferredSize(
               preferredSize: const Size.fromHeight(60),
-              child: buildAppBar('Регистрация')),
+              child: buildAppBar('Вход')),
           body: Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
@@ -46,7 +44,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   children: [
                     const Spacer(),
                     Text(
-                      ' ФИО'.toUpperCase(),
+                      ' Придумайте пароль'.toUpperCase(),
                       style: const TextStyle(
                           color: AppColors.blackColor,
                           fontSize: 13,
@@ -69,10 +67,10 @@ class _SignUpPageState extends State<SignUpPage> {
                               borderSide: BorderSide(
                                   width: 1, color: AppColors.blackColor)),
                         ),
-                        controller: _fullNameController),
+                        controller: _password1Controller),
                     const SizedBox(height: 15),
                     Text(
-                      ' Телефон'.toUpperCase(),
+                      ' Повторите пароль'.toUpperCase(),
                       style: const TextStyle(
                           color: AppColors.blackColor,
                           fontSize: 13,
@@ -95,7 +93,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               borderSide: BorderSide(
                                   width: 1, color: AppColors.blackColor)),
                         ),
-                        controller: _numberController),
+                        controller: _password2Controller),
                     const SizedBox(height: 40),
                     ElevatedButton(
                         onPressed: () {

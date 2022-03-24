@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:hizma_project/components/app_bar.dart';
 
-class JustPage extends StatefulWidget {
-  const JustPage({Key? key}) : super(key: key);
-  // JustPage(this.product);
+class VerificationPage extends StatefulWidget {
+  const VerificationPage({Key? key}) : super(key: key);
+  // VerificationPage(this.product);
   // final Product product;
 
   @override
-  _JustPageState createState() => _JustPageState();
+  _VerificationPageState createState() => _VerificationPageState();
 }
 
-class _JustPageState extends State<JustPage> {
+class _VerificationPageState extends State<VerificationPage> {
   @override
   void initState() {
     super.initState();
@@ -29,10 +29,12 @@ class _JustPageState extends State<JustPage> {
         child: Scaffold(
           appBar: PreferredSize(
               preferredSize: const Size.fromHeight(60),
-              child: buildAppBar('Вход')),
+              child: buildAppBar('Проверка кода')),
           body: Container(
-              // child:
-              ),
+              color: Colors.white,
+              child: Column(
+                children: [],
+              )),
         ));
   }
 }
