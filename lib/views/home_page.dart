@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hizma_project/components/app_bar.dart';
+import 'authorization/sign_in_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,6 +12,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    checkLogin();
   }
 
   @override
@@ -25,9 +26,20 @@ class _HomePageState extends State<HomePage> {
           }
         },
         child: Scaffold(
-          appBar: PreferredSize(preferredSize: const Size.fromHeight(60),
-          child: buildAppBar('asdf')),
-          body: Image.asset('assets/images/logo.png'),
+          body: Container(
+              color: Colors.white,
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: Center(child: Image.asset('assets/images/logo.png'))),
         ));
+  }
+
+  void checkLogin() async {
+    await Future.delayed(const Duration(seconds: 3));
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const SignInPage()),
+    );
   }
 }
