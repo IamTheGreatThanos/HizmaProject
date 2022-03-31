@@ -35,121 +35,127 @@ class _SignUpPageState extends State<SignUpPage> {
           appBar: PreferredSize(
               preferredSize: const Size.fromHeight(60),
               child: buildAppBar('Регистрация')),
-          body: Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(40),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Spacer(),
-                    Text(
-                      ' ФИО'.toUpperCase(),
-                      style: const TextStyle(
-                          color: AppColors.blackColor,
-                          fontSize: 13,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(height: 15),
-                    TextField(
-                        decoration: const InputDecoration(
-                          labelText: '',
-                          fillColor: Color(0xFFD8E0F2),
-                          filled: true,
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(15)),
-                            borderSide: BorderSide(
-                                width: 1, color: AppColors.primaryColor),
-                          ),
-                          border: OutlineInputBorder(
+          body: SingleChildScrollView(
+            child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height - 100,
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(40),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Spacer(),
+                      Text(
+                        ' ФИО'.toUpperCase(),
+                        style: const TextStyle(
+                            color: AppColors.blackColor,
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(height: 15),
+                      TextField(
+                          decoration: const InputDecoration(
+                            labelText: '',
+                            fillColor: Color(0xFFD8E0F2),
+                            filled: true,
+                            focusedBorder: OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(15)),
                               borderSide: BorderSide(
-                                  width: 1, color: AppColors.blackColor)),
-                        ),
-                        controller: _fullNameController),
-                    const SizedBox(height: 15),
-                    Text(
-                      ' Телефон'.toUpperCase(),
-                      style: const TextStyle(
-                          color: AppColors.blackColor,
-                          fontSize: 13,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(height: 15),
-                    TextField(
-                        decoration: const InputDecoration(
-                          labelText: '',
-                          fillColor: Color(0xFFD8E0F2),
-                          filled: true,
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(15)),
-                            borderSide: BorderSide(
-                                width: 1, color: AppColors.primaryColor),
+                                  width: 1, color: AppColors.primaryColor),
+                            ),
+                            border: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(15)),
+                                borderSide: BorderSide(
+                                    width: 1, color: AppColors.blackColor)),
                           ),
-                          border: OutlineInputBorder(
+                          controller: _fullNameController),
+                      const SizedBox(height: 15),
+                      Text(
+                        ' Телефон'.toUpperCase(),
+                        style: const TextStyle(
+                            color: AppColors.blackColor,
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(height: 15),
+                      TextField(
+                          keyboardType: TextInputType.phone,
+                          decoration: const InputDecoration(
+                            labelText: '',
+                            fillColor: Color(0xFFD8E0F2),
+                            filled: true,
+                            focusedBorder: OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(15)),
                               borderSide: BorderSide(
-                                  width: 1, color: AppColors.blackColor)),
-                        ),
-                        controller: _numberController),
-                    const SizedBox(height: 40),
-                    ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const VerificationPage()),
-                          );
-                        },
-                        child: const Padding(
-                          padding: EdgeInsets.all(25),
-                          child: Text(
-                            'СМС код',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
+                                  width: 1, color: AppColors.primaryColor),
+                            ),
+                            border: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(15)),
+                                borderSide: BorderSide(
+                                    width: 1, color: AppColors.blackColor)),
                           ),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                            primary: AppColors.mainColor,
-                            minimumSize: const Size.fromHeight(50),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15)))),
-                    const SizedBox(height: 60),
-                    const Spacer(),
-                    Row(
-                      children: [
-                        const Spacer(),
-                        const Text(
-                          'У вас уже есть аккаунт? ',
-                          style: TextStyle(
-                              color: AppColors.mainColor, fontSize: 15),
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.of(context).pushAndRemoveUntil(
-                                MaterialPageRoute(
-                                    builder: (context) => const SignInPage()),
-                                (Route<dynamic> route) => false);
+                          controller: _numberController),
+                      const SizedBox(height: 40),
+                      ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const VerificationPage()),
+                            );
                           },
-                          child: const Text(
-                            'Войти',
-                            style: TextStyle(
-                                color: AppColors.mainColor,
-                                fontSize: 15,
-                                decoration: TextDecoration.underline),
+                          child: const Padding(
+                            padding: EdgeInsets.all(25),
+                            child: Text(
+                              'СМС код',
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.bold),
+                            ),
                           ),
-                        ),
-                        const Spacer(),
-                      ],
-                    ),
-                    const SizedBox(height: 20),
-                  ],
-                ),
-              )),
+                          style: ElevatedButton.styleFrom(
+                              primary: AppColors.mainColor,
+                              minimumSize: const Size.fromHeight(50),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15)))),
+                      const SizedBox(height: 60),
+                      const Spacer(),
+                      Row(
+                        children: [
+                          const Spacer(),
+                          const Text(
+                            'У вас уже есть аккаунт? ',
+                            style: TextStyle(
+                                color: AppColors.mainColor, fontSize: 15),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).pushAndRemoveUntil(
+                                  MaterialPageRoute(
+                                      builder: (context) => const SignInPage()),
+                                  (Route<dynamic> route) => false);
+                            },
+                            child: const Text(
+                              'Войти',
+                              style: TextStyle(
+                                  color: AppColors.mainColor,
+                                  fontSize: 15,
+                                  decoration: TextDecoration.underline),
+                            ),
+                          ),
+                          const Spacer(),
+                        ],
+                      ),
+                      const SizedBox(height: 20),
+                    ],
+                  ),
+                )),
+          ),
         ));
   }
 }

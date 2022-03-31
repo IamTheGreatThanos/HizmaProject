@@ -30,9 +30,14 @@ class _JustPageState extends State<JustPage> {
           appBar: PreferredSize(
               preferredSize: const Size.fromHeight(60),
               child: buildAppBar('Вход')),
-          body: Container(
+          body: SingleChildScrollView(
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height - 100,
+              color: Colors.white,
               // child:
-              ),
+            ),
+          ),
         ));
   }
 }

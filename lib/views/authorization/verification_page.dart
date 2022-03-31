@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hizma_project/components/app_bar.dart';
 import 'package:hizma_project/utils/const.dart';
+import 'package:hizma_project/views/authorization/set_password_page.dart';
 import 'package:pin_code_fields/pin_code_fields.dart' as pin;
 import 'dart:async';
 
@@ -52,7 +53,14 @@ class _VerificationPageState extends State<VerificationPage> {
   }
 
   void sendVerificationCode() async {
-    print(123);
+    if (textEditingController.text == '1234') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const SetPasswordPage()),
+      );
+    } else {
+      print(textEditingController.text);
+    }
   }
 
   @override
@@ -69,48 +77,50 @@ class _VerificationPageState extends State<VerificationPage> {
           appBar: PreferredSize(
               preferredSize: const Size.fromHeight(60),
               child: buildAppBar('Проверка кода')),
-          body: Container(
-              color: Colors.white,
-              child: Column(
-                children: [
-                  SizedBox(height: 40),
-                  Center(
-                    child: SizedBox(
-                        width: 200,
-                        child: Text(
-                            "Код был отправлен на номер ${phoneNumber} через SMS-сообщение",
-                            style: TextStyle(
-                                color: AppColors.mainColor, fontSize: 15),
-                            textAlign: TextAlign.center)),
-                  ),
-                  SizedBox(height: 40),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 60, vertical: 20),
-                    child: pinCodeTextFiled(context),
-                  ),
-                  SizedBox(height: 40),
-                  Center(
-                      child: _time != "00"
-                          ? Text(
-                              "Повторяная отправка через 00:$_time",
-                              style: const TextStyle(
+          body: SingleChildScrollView(
+            child: Container(
+                color: Colors.white,
+                child: Column(
+                  children: [
+                    SizedBox(height: 40),
+                    Center(
+                      child: SizedBox(
+                          width: 200,
+                          child: Text(
+                              "Код был отправлен на номер ${phoneNumber} через SMS-сообщение",
+                              style: TextStyle(
                                   color: AppColors.mainColor, fontSize: 15),
-                            )
-                          : GestureDetector(
-                              onTap: () {
-                                startTimer();
-                              },
-                              child: const Text(
-                                "Получить новый код",
-                                style: TextStyle(
-                                    color: AppColors.mainColor,
-                                    fontSize: 15,
-                                    decoration: TextDecoration.underline),
-                              ),
-                            )),
-                ],
-              )),
+                              textAlign: TextAlign.center)),
+                    ),
+                    SizedBox(height: 40),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 60, vertical: 20),
+                      child: pinCodeTextFiled(context),
+                    ),
+                    SizedBox(height: 40),
+                    Center(
+                        child: _time != "00"
+                            ? Text(
+                                "Повторяная отправка через 00:$_time",
+                                style: const TextStyle(
+                                    color: AppColors.mainColor, fontSize: 15),
+                              )
+                            : GestureDetector(
+                                onTap: () {
+                                  startTimer();
+                                },
+                                child: const Text(
+                                  "Получить новый код",
+                                  style: TextStyle(
+                                      color: AppColors.mainColor,
+                                      fontSize: 15,
+                                      decoration: TextDecoration.underline),
+                                ),
+                              )),
+                  ],
+                )),
+          ),
         ));
   }
 
