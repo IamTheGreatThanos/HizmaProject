@@ -144,7 +144,51 @@ class _TakeSendingOrderPageState extends State<TakeSendingOrderPage> {
                               )
                             ],
                           )),
-                    )
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.8,
+                      child: Text(
+                        'Детали'.toUpperCase(),
+                        style: const TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.mainColor),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(30, 20, 0, 10),
+                          child: Image.asset(
+                            'assets/icons/ic_date_from.png',
+                            width: 40,
+                            height: 40,
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.68,
+                          height: 50,
+                          child: TextField(
+                              decoration: const InputDecoration(
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.always,
+                                hintText: "Откуда",
+                                labelText: '',
+                                fillColor: Colors.white,
+                                filled: true,
+                                border: InputBorder.none,
+                              ),
+                              controller: _fromController),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.7,
+                      child: const Divider(
+                        color: AppColors.primaryColor,
+                        thickness: 2,
+                      ),
+                    ),
                   ],
                 )),
           ),

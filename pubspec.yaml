@@ -70,6 +70,10 @@ flutter:
     - assets/icons/ic_promo.png
     - assets/icons/nav_btn.png
     - assets/icons/ic_route.png
+    - assets/icons/ic_date_from.png
+    - assets/icons/ic_date_where.png
+    - assets/icons/ic_weight.png
+    - assets/icons/ic_kind_transport.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
