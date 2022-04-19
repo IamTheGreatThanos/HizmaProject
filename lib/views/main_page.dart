@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hizma_project/components/app_bar.dart';
+import 'package:hizma_project/views/orders/take_sending_order_page.dart';
 import '../utils/const.dart';
 
 class MainPage extends StatefulWidget {
@@ -31,7 +32,7 @@ class _MainPageState extends State<MainPage> {
           body: SingleChildScrollView(
             child: Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height - 10,
+                // height: MediaQuery.of(context).size.height - 10,
                 color: Colors.white,
                 child: Padding(
                   padding:
@@ -50,14 +51,21 @@ class _MainPageState extends State<MainPage> {
                       ),
                       SizedBox(
                           width: MediaQuery.of(context).size.width * 0.8,
-                          child: Image.asset('assets/images/logo.png')),
+                          child: Image.asset('assets/images/logo.jpeg')),
                       Row(
                         children: [
                           SizedBox(
                             height: MediaQuery.of(context).size.width * 0.42,
                             width: MediaQuery.of(context).size.width * 0.42,
                             child: ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const TakeSendingOrderPage()),
+                                  );
+                                },
                                 child: Column(
                                   children: [
                                     const Spacer(),
@@ -67,7 +75,7 @@ class _MainPageState extends State<MainPage> {
                                         height: 45,
                                         width: 45,
                                         child: Image.asset(
-                                            'assets/icons/ic_support.png'),
+                                            'assets/icons/ic_history.png'),
                                       ),
                                     ),
                                     const Text(
@@ -92,7 +100,14 @@ class _MainPageState extends State<MainPage> {
                             height: MediaQuery.of(context).size.width * 0.42,
                             width: MediaQuery.of(context).size.width * 0.42,
                             child: ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const TakeSendingOrderPage()),
+                                  );
+                                },
                                 child: Column(
                                   children: [
                                     const Spacer(),
@@ -102,11 +117,11 @@ class _MainPageState extends State<MainPage> {
                                         height: 45,
                                         width: 45,
                                         child: Image.asset(
-                                            'assets/icons/ic_support.png'),
+                                            'assets/icons/ic_deliver.png'),
                                       ),
                                     ),
                                     const Text(
-                                      'Отправить посылку',
+                                      'Доставить посылку',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                           fontSize: 14,
@@ -131,7 +146,14 @@ class _MainPageState extends State<MainPage> {
                             height: MediaQuery.of(context).size.width * 0.42,
                             width: MediaQuery.of(context).size.width * 0.42,
                             child: ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const TakeSendingOrderPage()),
+                                  );
+                                },
                                 child: Column(
                                   children: [
                                     const Spacer(),
@@ -141,11 +163,11 @@ class _MainPageState extends State<MainPage> {
                                         height: 45,
                                         width: 45,
                                         child: Image.asset(
-                                            'assets/icons/ic_support.png'),
+                                            'assets/icons/ic_promo.png'),
                                       ),
                                     ),
                                     const Text(
-                                      'Отправить посылку',
+                                      'Контакты',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                           fontSize: 14,
@@ -161,12 +183,19 @@ class _MainPageState extends State<MainPage> {
                                         borderRadius:
                                             BorderRadius.circular(15)))),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           SizedBox(
                             height: MediaQuery.of(context).size.width * 0.42,
                             width: MediaQuery.of(context).size.width * 0.42,
                             child: ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const TakeSendingOrderPage()),
+                                  );
+                                },
                                 child: Column(
                                   children: [
                                     const Spacer(),
@@ -176,11 +205,11 @@ class _MainPageState extends State<MainPage> {
                                         height: 45,
                                         width: 45,
                                         child: Image.asset(
-                                            'assets/icons/ic_support.png'),
+                                            'assets/icons/ic_profile.png'),
                                       ),
                                     ),
                                     const Text(
-                                      'Отправить посылку',
+                                      'Профиль',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                           fontSize: 14,
@@ -198,6 +227,43 @@ class _MainPageState extends State<MainPage> {
                           ),
                         ],
                       ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.8,
+                          child: const Text(
+                            'Новости',
+                            style: TextStyle(
+                                fontSize: 22, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 420,
+                        child: ListView(
+                            physics: const NeverScrollableScrollPhysics(),
+                            children: <Widget>[
+                              Card(
+                                child: SizedBox(
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.8,
+                                    height: 200,
+                                    child:
+                                        Image.asset('assets/images/logo.jpeg')),
+                              ),
+                              Card(
+                                child: SizedBox(
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.8,
+                                    height: 200,
+                                    child:
+                                        Image.asset('assets/images/logo.jpeg')),
+                              ),
+                            ]),
+                      )
                     ],
                   ),
                 )),

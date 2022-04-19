@@ -64,6 +64,12 @@ flutter:
   assets:
     - assets/images/logo.jpeg
     - assets/icons/ic_support.png
+    - assets/icons/ic_deliver.png
+    - assets/icons/ic_history.png
+    - assets/icons/ic_profile.png
+    - assets/icons/ic_promo.png
+    - assets/icons/nav_btn.png
+    - assets/icons/ic_route.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
