@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hizma_project/components/app_bar.dart';
-
 import '../utils/const.dart';
 
 class MainPage extends StatefulWidget {
@@ -41,7 +40,7 @@ class _MainPageState extends State<MainPage> {
                     children: [
                       Row(
                         children: [
-                          Spacer(),
+                          const Spacer(),
                           SizedBox(
                             height: 45,
                             width: 45,

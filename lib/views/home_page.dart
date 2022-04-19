@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
               color: Colors.white,
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
-              child: Center(child: Image.asset('assets/images/logo.png'))),
+              child: Center(child: Image.asset('assets/images/logo.jpeg'))),
         ));
   }
 
