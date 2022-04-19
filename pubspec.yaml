@@ -34,7 +34,7 @@ dependencies:
   shared_preferences: ^2.0.8
   http: ^0.13.4
   path_provider: ^2.0.5
-  connectivity: ^3.0.6
+  # connectivity: ^3.0.6
   url_launcher: ^6.0.12
   pin_code_fields: ^7.3.0
 
@@ -62,7 +62,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/logo.png
+    - assets/images/logo.jpeg
     - assets/icons/ic_support.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
