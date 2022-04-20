@@ -13,6 +13,10 @@ class TakeSendingOrderPage extends StatefulWidget {
 class _TakeSendingOrderPageState extends State<TakeSendingOrderPage> {
   final TextEditingController _fromController = TextEditingController();
   final TextEditingController _whereController = TextEditingController();
+  final TextEditingController _dateFromController = TextEditingController();
+  final TextEditingController _dateWhereController = TextEditingController();
+  final TextEditingController _weightController = TextEditingController();
+  final TextEditingController _kindController = TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -32,7 +36,7 @@ class _TakeSendingOrderPageState extends State<TakeSendingOrderPage> {
           body: SingleChildScrollView(
             child: Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height - 100,
+                // height: MediaQuery.of(context).size.height - 100,
                 color: Colors.white,
                 child: Column(
                   children: [
@@ -156,29 +160,35 @@ class _TakeSendingOrderPageState extends State<TakeSendingOrderPage> {
                       ),
                     ),
                     Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(30, 20, 0, 10),
+                          padding: const EdgeInsets.fromLTRB(30, 20, 0, 5),
                           child: Image.asset(
                             'assets/icons/ic_date_from.png',
-                            width: 40,
-                            height: 40,
+                            width: 35,
+                            height: 35,
                           ),
                         ),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.68,
-                          height: 50,
-                          child: TextField(
-                              decoration: const InputDecoration(
-                                floatingLabelBehavior:
-                                    FloatingLabelBehavior.always,
-                                hintText: "Откуда",
-                                labelText: '',
-                                fillColor: Colors.white,
-                                filled: true,
-                                border: InputBorder.none,
-                              ),
-                              controller: _fromController),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 20, 0, 5),
+                          child: SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.68,
+                            height: 40,
+                            child: TextField(
+                                decoration: const InputDecoration(
+                                  hintStyle:
+                                      TextStyle(color: AppColors.mainColor),
+                                  floatingLabelBehavior:
+                                      FloatingLabelBehavior.always,
+                                  hintText: "Дата выезда",
+                                  labelText: '',
+                                  fillColor: Colors.white,
+                                  filled: true,
+                                  border: InputBorder.none,
+                                ),
+                                controller: _dateFromController),
+                          ),
                         ),
                       ],
                     ),
@@ -186,9 +196,146 @@ class _TakeSendingOrderPageState extends State<TakeSendingOrderPage> {
                       width: MediaQuery.of(context).size.width * 0.7,
                       child: const Divider(
                         color: AppColors.primaryColor,
-                        thickness: 2,
+                        thickness: 1,
                       ),
                     ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(30, 0, 0, 5),
+                          child: Image.asset(
+                            'assets/icons/ic_date_where.png',
+                            width: 35,
+                            height: 35,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
+                          child: SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.68,
+                              height: 50,
+                              child: TextField(
+                                  decoration: const InputDecoration(
+                                    hintStyle:
+                                        TextStyle(color: AppColors.mainColor),
+                                    floatingLabelBehavior:
+                                        FloatingLabelBehavior.always,
+                                    hintText: "Дата приезда",
+                                    labelText: '',
+                                    fillColor: Colors.white,
+                                    filled: true,
+                                    border: InputBorder.none,
+                                  ),
+                                  controller: _dateWhereController)),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.7,
+                      child: const Divider(
+                        color: AppColors.primaryColor,
+                        thickness: 1,
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(30, 0, 0, 5),
+                          child: Image.asset(
+                            'assets/icons/ic_weight.png',
+                            width: 35,
+                            height: 35,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
+                          child: SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.68,
+                            height: 50,
+                            child: TextField(
+                                decoration: const InputDecoration(
+                                  hintStyle:
+                                      TextStyle(color: AppColors.mainColor),
+                                  floatingLabelBehavior:
+                                      FloatingLabelBehavior.always,
+                                  hintText: "Сколько кг можете взять",
+                                  labelText: '',
+                                  fillColor: Colors.white,
+                                  filled: true,
+                                  border: InputBorder.none,
+                                ),
+                                controller: _weightController),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.7,
+                      child: const Divider(
+                        color: AppColors.primaryColor,
+                        thickness: 1,
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(30, 0, 0, 5),
+                          child: Image.asset(
+                            'assets/icons/ic_kind_transport.png',
+                            width: 35,
+                            height: 35,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
+                          child: SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.68,
+                            height: 50,
+                            child: TextField(
+                                decoration: const InputDecoration(
+                                  hintStyle:
+                                      TextStyle(color: AppColors.mainColor),
+                                  floatingLabelBehavior:
+                                      FloatingLabelBehavior.always,
+                                  hintText: "Вид транспорта",
+                                  labelText: '',
+                                  fillColor: Colors.white,
+                                  filled: true,
+                                  border: InputBorder.none,
+                                ),
+                                controller: _kindController),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.7,
+                      child: const Divider(
+                        color: AppColors.primaryColor,
+                        thickness: 1,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(30),
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          child: const Padding(
+                            padding: EdgeInsets.all(25),
+                            child: Text(
+                              'Создать заявку',
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                              primary: AppColors.mainColor,
+                              minimumSize: const Size.fromHeight(50),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15)))),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    )
                   ],
                 )),
           ),

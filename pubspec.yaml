@@ -74,6 +74,7 @@ flutter:
     - assets/icons/ic_date_where.png
     - assets/icons/ic_weight.png
     - assets/icons/ic_kind_transport.png
+    - assets/icons/ic_bg.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
