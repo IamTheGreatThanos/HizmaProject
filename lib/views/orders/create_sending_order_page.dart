@@ -13,10 +13,14 @@ class CreateSendingOrderPage extends StatefulWidget {
 class _CreateSendingOrderPageState extends State<CreateSendingOrderPage> {
   final TextEditingController _fromController = TextEditingController();
   final TextEditingController _whereController = TextEditingController();
-  final TextEditingController _dateFromController = TextEditingController();
-  final TextEditingController _dateWhereController = TextEditingController();
-  final TextEditingController _weightController = TextEditingController();
-  final TextEditingController _kindController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
+  final TextEditingController _imageController = TextEditingController();
+  final TextEditingController _priceController = TextEditingController();
+  final TextEditingController _senderAddressController =
+      TextEditingController();
+  final TextEditingController _receiverAddressController =
+      TextEditingController();
+  final TextEditingController _receiverInfoController = TextEditingController();
 
   bool isDoorToDoor = false;
 
@@ -203,7 +207,7 @@ class _CreateSendingOrderPageState extends State<CreateSendingOrderPage> {
                                   filled: true,
                                   border: InputBorder.none,
                                 ),
-                                controller: _dateFromController),
+                                controller: _descriptionController),
                           ),
                         ],
                       ),
@@ -256,7 +260,7 @@ class _CreateSendingOrderPageState extends State<CreateSendingOrderPage> {
                                   filled: true,
                                   border: InputBorder.none,
                                 ),
-                                controller: _dateFromController),
+                                controller: _imageController),
                           ),
                         ],
                       ),
@@ -295,22 +299,21 @@ class _CreateSendingOrderPageState extends State<CreateSendingOrderPage> {
                             ),
                           ),
                           SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.68,
-                            height: 30,
-                            child: TextField(
-                                decoration: const InputDecoration(
-                                  hintStyle:
-                                      TextStyle(color: AppColors.mainColor),
-                                  floatingLabelBehavior:
-                                      FloatingLabelBehavior.always,
-                                  hintText: "Укажите цену",
-                                  labelText: '',
-                                  fillColor: Colors.white,
-                                  filled: true,
-                                  border: InputBorder.none,
-                                ),
-                                controller: _dateFromController),
-                          ),
+                              width: MediaQuery.of(context).size.width * 0.68,
+                              height: 30,
+                              child: TextField(
+                                  decoration: const InputDecoration(
+                                    hintStyle:
+                                        TextStyle(color: AppColors.mainColor),
+                                    floatingLabelBehavior:
+                                        FloatingLabelBehavior.always,
+                                    hintText: "Укажите цену",
+                                    labelText: '',
+                                    fillColor: Colors.white,
+                                    filled: true,
+                                    border: InputBorder.none,
+                                  ),
+                                  controller: _priceController)),
                         ],
                       ),
                     ],
@@ -378,7 +381,7 @@ class _CreateSendingOrderPageState extends State<CreateSendingOrderPage> {
                                   filled: true,
                                   border: InputBorder.none,
                                 ),
-                                controller: _dateFromController),
+                                controller: _senderAddressController),
                           ),
                         ],
                       ),
@@ -406,7 +409,7 @@ class _CreateSendingOrderPageState extends State<CreateSendingOrderPage> {
                             filled: true,
                             border: InputBorder.none,
                           ),
-                          controller: _dateFromController),
+                          controller: _receiverAddressController),
                     ),
                   ),
                   Row(
@@ -449,7 +452,7 @@ class _CreateSendingOrderPageState extends State<CreateSendingOrderPage> {
                                   filled: true,
                                   border: InputBorder.none,
                                 ),
-                                controller: _dateFromController),
+                                controller: _receiverInfoController),
                           ),
                         ],
                       ),
@@ -465,7 +468,93 @@ class _CreateSendingOrderPageState extends State<CreateSendingOrderPage> {
                   Padding(
                     padding: const EdgeInsets.all(30),
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  shape: const RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(20))),
+                                  content: const Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20, vertical: 40),
+                                    child: Text(
+                                        "Ваша заявка принята Ожидайте сообщенте от курьеров!",
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold)),
+                                  ),
+                                  actions: [
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 5, vertical: 20),
+                                      child: SizedBox(
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.33,
+                                        child: ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: const Padding(
+                                            padding: EdgeInsets.all(5),
+                                            child: Text(
+                                              'Хорошо',
+                                              style: TextStyle(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ),
+                                          style: ElevatedButton.styleFrom(
+                                              primary: AppColors.mainColor,
+                                              minimumSize:
+                                                  const Size.fromHeight(55),
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          15))),
+                                        ),
+                                      ),
+                                    ),
+                                    const Spacer(),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 5, vertical: 20),
+                                      child: SizedBox(
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.33,
+                                        child: ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: const Padding(
+                                            padding: EdgeInsets.all(5),
+                                            child: Text(
+                                              'Еще раз',
+                                              style: TextStyle(
+                                                  color: AppColors.blackColor,
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ),
+                                          style: ElevatedButton.styleFrom(
+                                              primary: Colors.white,
+                                              minimumSize:
+                                                  const Size.fromHeight(55),
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          15))),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                );
+                              });
+                        },
                         child: const Padding(
                           padding: EdgeInsets.all(25),
                           child: Text(
