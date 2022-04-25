@@ -37,6 +37,7 @@ dependencies:
   # connectivity: ^3.0.6
   url_launcher: ^6.0.12
   pin_code_fields: ^7.3.0
+  expandable: ^5.0.1
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +76,7 @@ flutter:
     - assets/icons/ic_weight.png
     - assets/icons/ic_kind_transport.png
     - assets/icons/ic_bg.png
+    - assets/icons/ic_map.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hizma_project/components/app_bar.dart';
+import 'package:hizma_project/views/orders/parcels_page.dart';
 
 import '../../utils/const.dart';
 
@@ -318,7 +319,12 @@ class _TakeSendingOrderPageState extends State<TakeSendingOrderPage> {
                     Padding(
                       padding: const EdgeInsets.all(30),
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const ParcelsPage()));
+                          },
                           child: const Padding(
                             padding: EdgeInsets.all(25),
                             child: Text(
