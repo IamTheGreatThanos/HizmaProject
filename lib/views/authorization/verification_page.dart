@@ -79,6 +79,7 @@ class _VerificationPageState extends State<VerificationPage> {
               child: buildAppBar('Проверка кода')),
           body: SingleChildScrollView(
             child: Container(
+                height: MediaQuery.of(context).size.height,
                 color: Colors.white,
                 child: Column(
                   children: [
