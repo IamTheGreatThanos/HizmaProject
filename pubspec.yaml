@@ -78,6 +78,13 @@ flutter:
     - assets/icons/ic_bg.png
     - assets/icons/ic_map.png
     - assets/icons/ic_checked.png
+    - assets/icons/ic_edit.png
+    - assets/images/ava.png
+    - assets/icons/ic_wallet.png
+    - assets/icons/ic_phone.png
+    - assets/icons/ic_payment.png
+    - assets/icons/ic_mastercard.png
+    - assets/icons/ic_plus.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

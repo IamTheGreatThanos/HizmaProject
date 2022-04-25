@@ -3,6 +3,7 @@ import 'package:hizma_project/components/app_bar.dart';
 import 'package:hizma_project/views/orders/contracts_page.dart';
 import 'package:hizma_project/views/orders/create_sending_order_page.dart';
 import 'package:hizma_project/views/orders/take_sending_order_page.dart';
+import 'package:hizma_project/views/profile/profile_page.dart';
 import '../utils/const.dart';
 
 class MainPage extends StatefulWidget {
@@ -195,7 +196,7 @@ class _MainPageState extends State<MainPage> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const TakeSendingOrderPage()),
+                                            const ProfilePage()),
                                   );
                                 },
                                 child: Column(
