@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hizma_project/components/app_bar.dart';
+import 'package:hizma_project/views/orders/contracts_page.dart';
 import 'package:hizma_project/views/orders/create_sending_order_page.dart';
 import 'package:hizma_project/views/orders/take_sending_order_page.dart';
 import '../utils/const.dart';
@@ -152,7 +153,7 @@ class _MainPageState extends State<MainPage> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const TakeSendingOrderPage()),
+                                            const ContractsPage()),
                                   );
                                 },
                                 child: Column(
