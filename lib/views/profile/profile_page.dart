@@ -31,7 +31,7 @@ class _ProfilePageState extends State<ProfilePage> {
           body: SingleChildScrollView(
             child: Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
+                height: MediaQuery.of(context).size.height + 100,
                 color: Colors.white,
                 child: Column(
                   children: [
@@ -272,7 +272,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             ],
                           ),
                           const SizedBox(
-                            width: 20,
+                            width: 15,
                           ),
                           Switch(
                             value: isNotification,

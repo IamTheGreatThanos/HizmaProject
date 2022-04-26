@@ -487,13 +487,14 @@ class _CreateSendingOrderPageState extends State<CreateSendingOrderPage> {
                                             fontWeight: FontWeight.bold)),
                                   ),
                                   actions: [
+                                    const Spacer(),
                                     Padding(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 5, vertical: 20),
                                       child: SizedBox(
                                         width:
                                             MediaQuery.of(context).size.width *
-                                                0.33,
+                                                0.30,
                                         child: ElevatedButton(
                                           onPressed: () {
                                             Navigator.of(context).pop();
@@ -525,7 +526,7 @@ class _CreateSendingOrderPageState extends State<CreateSendingOrderPage> {
                                       child: SizedBox(
                                         width:
                                             MediaQuery.of(context).size.width *
-                                                0.33,
+                                                0.30,
                                         child: ElevatedButton(
                                           onPressed: () {
                                             Navigator.of(context).pop();
@@ -550,7 +551,8 @@ class _CreateSendingOrderPageState extends State<CreateSendingOrderPage> {
                                                           15))),
                                         ),
                                       ),
-                                    )
+                                    ),
+                                    const Spacer(),
                                   ],
                                 );
                               });

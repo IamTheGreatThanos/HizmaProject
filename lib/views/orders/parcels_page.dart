@@ -34,7 +34,7 @@ class _ParcelsPageState extends State<ParcelsPage> {
                 color: Colors.white,
                 child: Column(children: [
                   const SizedBox(
-                    height: 30,
+                    height: 25,
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -296,7 +296,7 @@ class _ParcelsPageState extends State<ParcelsPage> {
                                                           MediaQuery.of(context)
                                                                   .size
                                                                   .width *
-                                                              0.6,
+                                                              0.58,
                                                       child: Column(
                                                         crossAxisAlignment:
                                                             CrossAxisAlignment

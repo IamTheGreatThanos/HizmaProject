@@ -257,14 +257,14 @@ class _ContractsPageState extends State<ContractsPage> {
                                             children: [
                                               const Spacer(),
                                               const SizedBox(
-                                                width: 5,
+                                                width: 3,
                                               ),
                                               SizedBox(
                                                 height: 40,
                                                 width: MediaQuery.of(context)
                                                         .size
                                                         .width *
-                                                    0.26,
+                                                    0.27,
                                                 child: ElevatedButton.icon(
                                                   style:
                                                       ElevatedButton.styleFrom(
@@ -298,7 +298,7 @@ class _ContractsPageState extends State<ContractsPage> {
                                                 width: MediaQuery.of(context)
                                                         .size
                                                         .width *
-                                                    0.24,
+                                                    0.23,
                                                 child: ElevatedButton.icon(
                                                   style:
                                                       ElevatedButton.styleFrom(
@@ -332,7 +332,7 @@ class _ContractsPageState extends State<ContractsPage> {
                                                 width: MediaQuery.of(context)
                                                         .size
                                                         .width *
-                                                    0.26,
+                                                    0.27,
                                                 child: ElevatedButton.icon(
                                                   style:
                                                       ElevatedButton.styleFrom(
@@ -356,7 +356,7 @@ class _ContractsPageState extends State<ContractsPage> {
                                               ),
                                               const Spacer(),
                                               const SizedBox(
-                                                width: 5,
+                                                width: 3,
                                               ),
                                             ],
                                           ),
