@@ -38,6 +38,8 @@ dependencies:
   url_launcher: ^6.0.12
   pin_code_fields: ^7.3.0
   expandable: ^5.0.1
+  google_maps_flutter: ^2.1.5
+  flutter_polyline_points: ^1.0.0
 
 dev_dependencies:
   flutter_test:

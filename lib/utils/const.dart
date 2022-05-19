@@ -9,5 +9,6 @@ class AppColors {
 }
 
 class AppConstants {
-  static final String baseUrl = "https://boszhan.kz/";
+  static const String baseUrl = "https://boszhan.kz/";
+  static const String googleAPI_KEY = "AIzaSyAwrQK4tcWfluy4ETupnN_yJt1mqSF2x9s";
 }

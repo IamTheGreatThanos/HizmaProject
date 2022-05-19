@@ -1,6 +1,7 @@
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:hizma_project/components/app_bar.dart';
+import 'package:hizma_project/views/orders/map_page.dart';
 
 import '../../utils/const.dart';
 
@@ -345,6 +346,12 @@ class _ParcelsPageState extends State<ParcelsPage> {
                                                     GestureDetector(
                                                       onTap: () {
                                                         print('Map tapped!');
+                                                        Navigator.push(
+                                                            context,
+                                                            MaterialPageRoute(
+                                                                builder:
+                                                                    (context) =>
+                                                                        const MapPage()));
                                                       },
                                                       child: SizedBox(
                                                           width: MediaQuery.of(
